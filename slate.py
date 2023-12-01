@@ -28,7 +28,7 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) < 2:
-        print("\n{}".format(main("input.txt")))
+        print("{}\n".format(main("input.txt")))
     else:
         for f in sys.argv[1:]:
-            print("\n{}".format(main(f)))
+            print("{}:\n{}\n".format(f, main(f)))
