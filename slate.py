@@ -1,7 +1,7 @@
 def solve(input):
     out = 0
     for row in input:
-        pass
+        print(row)
     return out
 
 
