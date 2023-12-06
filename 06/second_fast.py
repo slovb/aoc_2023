@@ -6,9 +6,6 @@ def count(time, distance):
     def is_winning(speed):
         return distance < speed * (time - speed)
 
-    start = 0
-    end = time
-
     # find the start
     low = 0
     high = int(time // 2)
