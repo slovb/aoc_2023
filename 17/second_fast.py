@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 import heapq
-from pprint import pprint
+
+# barely faster, can't find a good heuristic so scrapped that
 
 
 @dataclass
@@ -39,10 +40,8 @@ def solve(input):
     while len(states) > 0:
         loss, x, y, steps_since_turn, direction = heapq.heappop(states)
         if (x, y) == destination:
-            if out is None or out > loss:
-                out = loss
-                # return loss # this is will be shortest so it is ok
-            continue
+            return loss
+
         candidates = []
         # move forward:
         if steps_since_turn < 10:
@@ -80,13 +79,9 @@ def read(filename):
         rows = [row.rstrip() for row in f.readlines()]
         input = []
         for row in rows:
-            # row = row.split(",")
-            # row = map(str.strip, row)
             row = list(map(int, row))
 
             input.append(row)
-            # input.append(int(row))
-            # input.append(list(row))
         return input
 
 
