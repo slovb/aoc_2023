@@ -1,10 +1,7 @@
-from pprint import pprint
-
-
 def solve(input):
     out = 0
     for row in input:
-        pprint(row)
+        print(row)
     return out
 
 
